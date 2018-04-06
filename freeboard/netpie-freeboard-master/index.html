@@ -25,14 +25,14 @@
 					function(){
 						$(function()
 						{ //DOM Ready
-							freeboard.initialize(true);
-							var dashboardPattern = window.localStorage.getItem("netpie.freeboard.dashboard");
+							$.getJSON("your_path/dashboard.json", function(result){
+							var dashboardPattern = result;
 							if (dashboardPattern !== null) {
-								dashboardPattern=JSON.parse(dashboardPattern);
-								freeboard.loadDashboard(dashboardPattern, function() {
-									freeboard.setEditing(false);
-								});
-							}
+							dashboardPattern=dashboardPattern;
+							freeboard.loadDashboard(dashboardPattern, function() {
+							freeboard.setEditing(false);
+							});
+							});
 						});
 
 					});
