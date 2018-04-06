@@ -25,13 +25,14 @@
 					function(){
 						$(function()
 						{ //DOM Ready
+							freeboard.initialize(true);
 							$.getJSON("your_path/dashboard.json", function(result){
-							var dashboardPattern = result;
-							if (dashboardPattern !== null) {
-							dashboardPattern=dashboardPattern;
-							freeboard.loadDashboard(dashboardPattern, function() {
-							freeboard.setEditing(false);
-							});
+								var dashboardPattern = result;
+								if (dashboardPattern !== null) {
+								dashboardPattern=dashboardPattern;
+								freeboard.loadDashboard(dashboardPattern, function() {
+								freeboard.setEditing(false);
+								});
 							});
 						});
 
